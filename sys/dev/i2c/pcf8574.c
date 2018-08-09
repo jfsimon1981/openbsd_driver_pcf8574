@@ -125,7 +125,7 @@ pcfgpio_write(struct pcfgpio_softc *sc, uint8_t val)
 {
 	iic_acquire_bus(sc->sc_tag, 0);
 	if (iic_exec(sc->sc_tag, I2C_OP_WRITE_WITH_STOP, sc->sc_addr,
-		&val, sizeof val, NULL, 0, 0)) {
+		&val, sizeof(val), NULL, 0, 0)) {
 		printf("%s: pcfgpio_write: failed to write\n",
 			sc->sc_dev.dv_xname);
 		iic_release_bus(sc->sc_tag, 0);
