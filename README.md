@@ -23,3 +23,15 @@ sys/dev/i2c/pcf8574.c
 	};
 };
 ```
+
+*Kernel configuration:*
+```
+pcfgpio*    at iic?
+gpio*       at pcfgpio?
+```
+
+*dmesg:*
+```
+pcfgpio0 at iic0 addr 0x20
+gpio0 at pcfgpio0: 8 pins
+```
